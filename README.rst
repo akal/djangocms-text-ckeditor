@@ -1,4 +1,4 @@
-djangocms-text-ckeditor
+djangocms-text-ckeditor - with additional configuratio options
 =======================
 
 Text Plugin for django-cms with CK-Editor
@@ -61,7 +61,7 @@ If you want to overwirite this behavior for your own picture plugin:
 
 There is a setting called:
 
-`TEXT_SAVE_IMAGE_FUNCTION = 'djangocms_text_ckeditor.picture_save.create_picture_plugin'` 
+`TEXT_SAVE_IMAGE_FUNCTION = 'djangocms_text_ckeditor.picture_save.create_picture_plugin'`
 
 you can overwrite this setting in your settings.py and point it to a function that handles image saves.
 Have a look at the function `create_picture_plugin` for details.
@@ -114,13 +114,11 @@ and a plugin class extending ``TextPlugin`` class:
 
     from djangocms_text_ckeditor.cms_plugins import TextPlugin
     from .models import MyTextModel
-    
-    
+
+
     class MyTextPlugin(TextPlugin):
         name = _(u"My text plugin")
         model = MyTextModel
     plugin_pool.register_plugin(MyTextPlugin)
 
 You can further customize your plugin as other plugins: http://django-cms.readthedocs.org/en/latest/extending_cms/custom_plugins.html
-
-
